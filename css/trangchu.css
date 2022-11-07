@@ -1,0 +1,892 @@
+/* style content of home page */
+/* mobile-first: */
+#content {
+    margin-top: 50px;
+    font-family: "Comic Sans MS";
+}
+/* style about div*/
+#about {
+    width: 100%;
+}
+#about-text h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #e15f41;
+    font-size: 3em;
+    text-align: center;
+}
+
+#about-text { 
+    padding: 20px;
+    font-size: 16px;
+    height: 260px;
+    color: #303952;
+    width: 90vw;
+}
+
+/***************** style product section *******************/
+#product_heading {
+    position: relative;
+    top: 20px;
+    height: 50px;
+    width: 90vw;
+    text-align: center;
+    font-size: 4em;
+    font-weight: normal;
+    color: red;
+    margin-top: 200px;
+}
+
+div#products {
+    font-family: "Raleway";
+    width: 100%;
+    min-height: 700px;
+    background: url("../imgs/product-background-mobile.jpg");
+    background-size: 100% 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+div.carousel-caption {
+    font-size: 1.2em;
+}
+/* product button */
+.product-btn {
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    border: none;
+    padding: 1vw 4vw;
+    color: #fff;
+    background-color: #c23616;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0,0, .7);
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* for hover effect on desktop */
+.product-btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -180%;
+    left: 0;
+    height: 180%;
+    width: 100%;
+    border-radius: 50% 50% 0 0;
+    background-color: green;
+    z-index: -1;
+    transition: .3s;
+}
+
+.product-btn:hover {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* slide show products for mobile using swipper library */
+/* hide <div> for desktop */
+#for_desktop {
+    display: none;
+}
+/* show <div> for mobile */
+#for_mobile {
+    width: 80vw;
+    height: auto;
+}
+/* style slide show with swiper.js */
+.swiper-container {
+    position: relative;
+}
+.swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+.product-details {
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+div.imgs->img {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    max-height: 426px;
+}
+
+
+
+/********* style the gallery section **********/
+#gallery {
+    margin-top: 0px;
+    width: 100%;
+    height: auto;
+    font-family: "Raleway", sans-serif;
+}
+#gallery #gallery-text {
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    height: 100px;
+    position: relative;
+    bottom: 100px;
+}
+
+#gallery #gallery-text h3 {
+    font-size: 8vw;
+    color: green;
+    font-family:Arial, Helvetica, sans-serif
+}
+/* hide gallery div for desktop */
+div.gallery-desktop {
+    display: none;
+}
+/* show slideshow div */
+div#gallery-mobile {
+    display: block;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../imgs/gallery-bg-mobile.png");
+    background-size: cover;
+}
+
+
+/****** swiper slide show for galllery *****/
+.swiper-gallery {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+   overflow: hidden;
+}
+.swiper-slide#gallery-slide {
+    width: 100%;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+}
+.swiper-slide#gallery-slide .gallery-imgBox {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.swiper-slide#gallery-slide .gallery-imgBox>img {
+    width: 100%;
+    max-width: 640px;
+    height: 100%;
+    min-height: 426px;
+}
+.swiper-slide#gallery-slide .img-details {
+    position: absolute;
+    bottom: -0px;
+    text-align: left;
+    padding-left: 20px;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.swiper-slide#gallery-slide .img-details h2 {
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery-btn {
+    display: inline-block;
+    padding: 1vw 2vw;
+    background-color: green;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
+}
+.gallery-btn:hover {
+    text-decoration: none;
+    color: #fff;
+}
+/******************** style the feedback section ************/
+#feedback {
+    font-family: "Raleway", sans-serif;
+    margin-top: 50px;
+    overflow: hidden;
+    height: auto;
+}
+
+.feedback-heading {
+    width: 100%;
+    text-align: center;
+    font-family: "Tangerine", sans-serif;
+}
+
+.feedback-heading h3 {
+    font-size: 56px;
+    color: green;
+    font-family: revert;
+}
+.feedback-container{
+    height: auto;
+    overflow: hidden;
+}
+.feedback-container .feedback-box  {
+    position: relative;
+    width: 300px;
+    height: 370px;
+    padding: 40px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.1) ;
+    overflow: hidden;
+    transition: .5s;
+    margin: 30px auto; /* center vertically cards*/
+}
+
+.feedback-container .feedback-box .icon {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: .5s;
+}
+.feedback-container .feedback-box .icon img.ava {
+    width: 90px;
+    height: 90px;
+}
+/* hover feedback card effect */
+.feedback-box:nth-child(1) .icon {
+    box-shadow: 0 0 0 0 brown;
+    background: rgb(160, 39, 39);
+}
+
+.feedback-box:nth-child(1):hover .icon {
+    box-shadow: 0 0 0 400px rgb(160, 39, 39);
+}
+
+.feedback-box:nth-child(2) .icon {
+    box-shadow: 0 0 0 0 limegreen;
+    background: limegreen;
+}
+
+.feedback-box:nth-child(2):hover .icon {
+    box-shadow: 0 0 0 400px green;
+}
+
+.feedback-box:nth-child(3) .icon {
+    background: cyan;
+    box-shadow: 0 0 0 0 cyan;
+}
+
+.feedback-box:nth-child(3):hover .icon {
+    box-shadow: 0 0 0 400px lightseagreen;
+}
+.feedback-box:nth-child(4) .icon {
+    background: orange;
+    box-shadow: 0 0 0 0 orange;
+}
+
+.feedback-box:nth-child(4):hover .icon {
+    box-shadow: 0 0 0 400px orangered;
+}
+.feedback-box:nth-child(5) .icon {
+    background: purple;
+    box-shadow: 0 0 0 0 purple;
+}
+.feedback-box:nth-child(5):hover .icon {
+    box-shadow: 0 0 0 400px plum;
+}
+.feedback-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    z-index: 1;
+}
+/* style feedback text */
+.feedback-box .feedback-text {
+    position: relative;
+    z-index: 10;
+    transition: .5s;
+    font-size: 1.1em;
+}
+.feedback-box:hover .feedback-text {
+    color: #fff;
+}
+.feedback-text h3 {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0;
+}
+.feedback-text p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+/* style feedback button */
+div#feedback-button {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.feedback-btn {
+    display: inline-block;
+    padding: 20px 40px;
+    color: #fff;
+    background-color: green;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .8);
+    transition: .5s;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.feedback-btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.feedback-btn:active,
+.feedback-btn:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/*** style certificate section ***/
+#certificate {
+    width: 100%;
+    margin-top: 50px;
+    height: auto;
+    background-image: url("../images/cert-bg.jpg") ;
+    background-position: top ;
+    background-repeat:no-repeat ;
+    display: block;
+	background-size: cover;
+	background-attachment: fixed;
+
+}
+.certificate-sep h3{
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    color: blue;
+}
+
+#certificate .certificate-text {
+    text-align: left;
+    padding-left: 30px;
+    font-size: 1.4em;
+}
+#certificate .certificate-text h3, h4 {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    color: #480454;
+
+}
+#certificate .certificate-text h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    color: red;
+}
+#certificate .certificate-text h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+}
+
+#certificate .certificate-text p {
+    color: crimson;
+}
+
+.certificate-container{
+    width: 100%;
+    text-align: center;
+}
+.certificate-container img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 20px 40px;
+}
+/* style number column */
+div.number {
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+div.col {
+    flex: 1;
+    text-align: center;
+    font-size: 3vw;
+    margin: 10px;
+    height: 130px;
+    box-sizing: border-box;
+    position: static; /* help 4 spans positioned right*/
+    overflow: hidden;
+}
+/* add snake border animation */
+div.col span:first-child {
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #fff, green);
+    animation: top_border 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes top_border {
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(100%);}
+}
+/* right border */
+div.col span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #fff, green);
+    animation: right_border 2s linear infinite;
+}
+
+@keyframes right_border {
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(100%);}
+}
+/* bottom border */
+div.col span:nth-child(3) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #fff, green);
+    animation: bottom_border 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes bottom_border {
+    0%{transform: translateX(100%);}
+    100%{transform: translateX(-100%);}
+}
+/* left border */
+div.col span:nth-child(4) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #fff,green);
+    animation: left_border 2s linear infinite;
+}
+@keyframes left_border {
+    0%{transform: translateY(100%);}
+    100%{transform: translateY(-100%);}
+}
+div.col span:nth-child(5) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #fff,black);
+    animation: last_border 2s linear infinite;
+}
+@keyframes last_border {
+    0%{transform: translateX(-100%);}
+    100%{transform: translateX(100%);}
+}
+/* style the number */
+div.num {
+    margin: 0;
+    color: #bb0505;
+    font-weight: 700;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+div.num::after {
+    content: "+";
+    font-size: 20px;
+}
+/* div.num::before {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 1px;
+    background: rgb(245, 67, 67);
+    position: absolute; 
+    bottom: -2px; 
+    left: 50%;
+    transform: translateX(-50%);
+} */
+/* style text under number */
+div.num + p {
+    position: absolute;
+    bottom: 0px;
+    width: 26%;
+    text-align: center;
+    color: mediumblue;
+}
+/*** style location section ***/
+#location {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+#location .location-text h3{
+        width: 100%;
+        font-size: 50px;
+        text-align: center;
+        font-family:Arial, Helvetica, sans-serif;
+        color: purple;
+}
+iframe {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+#location-info {
+    width: 100%;
+    height: auto;
+    margin-bottom: 70px;
+}
+
+.location-detail {
+    text-align: left;
+    padding-left: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 25px;
+
+}
+
+.location-detail i.fas {
+    font-size: 40px;
+    position: relative;
+    display: block;
+    color: green;
+}
+.location-detail p {
+    position: absolute;
+    top: 20px;
+    left: 120px;
+}
+.location-detail p > span {
+    font-family: "Raleway";
+    color: #111;
+    font-size: 1.3em;
+}
+.location-detail p>b {
+    color: orange;
+    font-size: 1.2em;
+    letter-spacing: 1.5px;
+}
+/**************************************** for desktop ***********************************/
+@media only screen and (min-width: 992px) {
+    /* style products section */
+    /* hide slide show display full image instead */
+    #for_desktop {
+        display: block;
+    }
+    #for_mobile{
+        display: none;
+    }
+
+    #about-text {
+        font-size: 1.6em;
+    }
+    #product_heading {
+        top: 50px;
+        margin-top: 50px;
+    }
+    /* change background-image */
+    div#products {
+        /* background-image: url('../imgs/product-desktop.jpg'); */
+        background-image: url('../images/cert-bg3.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        height: 500px;
+        margin-top: 150px;
+    }
+    /* button hover effect */
+    .product-btn:hover::after {
+        bottom: 0;
+    }
+    .product-btn:hover {
+        color: black;
+        text-decoration: none;
+    }
+
+    div.wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    figure .img-container {
+        display: inline-block;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+    }
+    #products figure img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        transition: .5s;
+    }
+    #products figure img:hover {
+        transform: scale(1.2);
+    }
+
+    #products figure figcaption {
+        text-align: center;
+        color: #fff;
+        font-size: 1.2em;
+    }
+    .product-btn {
+        padding: 10px 35px;
+    }
+    /* gallery section */
+    div.gallery-desktop {
+        display: block;
+        background: url("../imgs/gallery-bg-desktop.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    div#gallery-mobile {
+        display: none;
+    }
+    #gallery #gallery-text {
+        width: 100%;
+        text-align: center;
+        font-family: "Tangerine", sans-serif;
+        margin-bottom: 70px;
+        height: 100px;
+        position: relative;
+        bottom: 0px;
+    }
+    
+    #gallery #gallery-text h3 {
+    font-size: 56px;
+    color: green;
+    }
+    /*** feedback section ***/
+    .feedback-container {
+
+
+        /* center horizontal cards */
+        width: 100vw;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .feedback-container .feedback-box  {
+        width: 20vw;
+        margin: 0 2vw;
+    }
+    /* style feedback button */
+    .feedback-btn:hover {
+        color: #111;
+        text-decoration: none;
+        background-color: yellow;
+    }
+    /** style certicate section ***/
+    /* clear the flow to prevent that #certificate  has 0px of height */
+    #certificate::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    #certificate {
+        height: auto;
+    }
+    div.number {
+        height: 100%;
+        width: 50%;
+        display: flex;
+        padding-top: 100px;
+    }
+
+    div.col {
+        flex: 1;
+        margin: 20px;
+        height: 200px;
+        font-size: 2em;
+        overflow: visible;
+        background-image: url(../imgs/hand.png);
+        background-size: 100% 90%;
+        background-repeat: no-repeat;
+        background-position:  0 -10px;
+    }
+    /* delte snake border efect */
+    div.col span {
+        display: none;
+    }
+    /* style the number */
+    div.col  div.num {
+        width: 26%;
+        top: 20%;
+        transform: translateY(0);
+        font-size: 2.5vw;
+    }
+    div.col p {
+        margin-top: 10px;
+        font-size: 1.5vw;
+        padding:  0px;
+    }
+    
+    /*** style location section ***/
+    #location-info {
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+    }
+
+    .location-detail {
+        position: relative;
+    }
+    .location-detail i.fas{
+        color: orange;
+    }
+    .location-detail:hover i.fas {
+        color:  violet;
+    }
+    .location-detail p {
+        overflow: hidden;
+        font-size: 1em;
+    }
+    .location-detail p>b {
+        font-size: 1.1em;
+        letter-spacing: 1.5px;
+    }
+    /* add hover effect */
+    .location-detail p::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: -100%;
+        width: 60px;
+        height: 2px;
+        background-color: orange;
+        transition: .5s;
+    }
+
+    .location-detail:hover p::before {
+        left: 0;
+    }
+}
+
+/* --------------------------- */
+@import url(https://fonts.googleapis.com/css?family=BenchNine:700);
+.snip1582 {
+  background-color: #c47135;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'BenchNine', Arial, sans-serif;
+  font-size: 1em;
+  font-size: 22px;
+  line-height: 1em;
+  margin: 15px 40px;
+  outline: none;
+  padding: 12px 40px 10px;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.snip1582:before,
+.snip1582:after {
+  border-color: transparent;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 0;
+  content: "";
+  height: 0px;
+  position: absolute;
+  width: 0px;
+}
+
+.snip1582:before {
+  border-color: blue;
+  border-top-width: 2px;
+  left: 0px;
+  top: -5px;
+}
+
+.snip1582:after {
+  border-bottom-width: 2px;
+  border-color: blue;
+  bottom: -5px;
+  right: 0px;
+}
+
+.snip1582:hover,
+.snip1582.hover {
+  background-color: #c47135;
+  color:blue;
+}
+
+.snip1582:hover:before,
+.snip1582.hover:before,
+.snip1582:hover:after,
+.snip1582.hover:after {
+  height: 100%;
+  width: 100%;
+}
+
+/* contact */
+.contact_heading{
+    position: relative;
+    height: 50px;
+    width: 90vw;
+    /* text-align: center; */
+    margin-left: 250px;
+    font-size: 4em;
+    font-weight: normal;
+    color: red;
+    font-family: 'none';
+}
+
+/*Account*/
+.vieworder {
+    cursor: pointer;
+}

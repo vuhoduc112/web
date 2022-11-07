@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+}
+/* style page title */
+#page-title {
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+    font-family: "Tangerine", sans-serif;
+    color: red;
+}
+
+#page-title h2{
+    font-size: 60px;
+}
+
+/* style login form */
+#main {
+    width: 80vw;
+    margin-top: 50px;
+}
+
+.myform input {
+    display: block;
+    width: 80%;
+    margin: 0px 250px;
+    margin-bottom: 25px;
+    height: 40px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    transition: .5s;
+}
+.myform input:focus {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .4);
+}
+.myform label {
+    display: block;
+    margin-left: 250px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.myform input[type="submit"] {
+    border: none;
+    background-color: #6c5ce7;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .7);
+    transition: .5s;
+}
+
+.myform input[type="submit"]:hover {
+    background-color: #d63031;
+    transform: translateY(-5px);
+}
+/* style the mini cart */
+#mini-cart .cart {
+    width: 100%;
+    font-size: 1.4em;
+}
+
+.cart tr {
+    border-bottom: 1px solid #cccccc;
+    height: 60px;
+    line-height: 60px;
+}
+
+tr.no-border {
+    border: none;
+}
+
+.align-right {
+    text-align: right;
+    float: right;
+}
+
+.edit-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #6c5ce7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .7);
+    transition: .5s;
+    line-height: 30px;
+}
+
+.edit-btn:hover {
+    color: #fff;
+    background-color: #d63031;
+    text-decoration: none;
+    transform: translateY(-5px);
+}
+
+.create-acc {
+    font-size: 1.1em;
+    margin-left: 80px;
+}
+
+#other-method {
+    width: 100%;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+#other-method #method {
+    margin-left: 80px;
+}
+
+#method a {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.7em;
+    transition: .5s;
+}
+
+#method a:hover {
+    transform: translateY(-5px);
+}

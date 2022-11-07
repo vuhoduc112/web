@@ -1,0 +1,612 @@
+/* for mobile */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#page {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#head {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../imgs/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+
+#nav {
+    height: 80px;
+    background-color: rgba(4,135,173, .7);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: .5s;
+    box-sizing: border-box;
+}
+
+/*  hidden navbar when sroll down (showMenuOnScroll.js)*/
+#nav.hiden {
+    transform: translateY(-950%);
+}
+
+/* style hamburger buttton */
+button.hamburger {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    /* center vertically */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: none;
+    box-sizing: border-box;
+    z-index: 11;
+    border: none;
+    outline: none;
+}
+/* create hamburger  button with span tag */
+button.hamburger span {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    top: 24px;
+    transition: .3s;
+    z-index: 11;
+}
+/* top of hamburger */
+button.hamburger span::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: .3s;
+    z-index: 11;
+}
+/* bottom of hamburger */
+button.hamburger span::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    transition: .3s;
+    z-index: 11;
+}
+
+/* add .toggle class for toggleClass jquery method */
+/* change humberger button to close button when clicked */
+button.hamburger.toggle span {
+    background-color: transparent;
+}
+button.hamburger.toggle span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+button.hamburger.toggle span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+/* style menu for mobile */
+#menu {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, .7);
+    /* hide menu */
+    transform: translateY(-200%);
+    transition: transform .3s linear;
+    z-index: 10;
+    top: 80px;
+}
+
+/* show menu with active class (toggleClass method in Jquery) */
+#menu.active {
+    transform: translateY(0%);
+}
+
+/* style nav link for mobile */
+#menu a {
+    /* center horizontally and vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 2vw;
+    font-weight: 700;
+    /* center */
+    margin: 0 auto;
+    letter-spacing: 0.2em;
+}
+/* style dropdown menu */
+#menu .dropdown-item {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    /* center horizontally */
+    margin: 0 auto;
+
+}
+
+/* create cheveron up and down with span element */
+span.cheveron {
+    display: inline-block;
+    width: 2vw;
+    height: 2vw;
+    border-style: solid;
+    border-width: 2px 2px 0 0;
+    transform: rotate(135deg);
+    transition: .5s;
+    position: relative;
+    bottom: 0px;
+    left: 10px;
+}
+
+/* hide sub items */
+.dropdown-item .subitem {
+    max-height: 0;
+    transition: max-height .5s;
+}
+/* show subitem when click product link (Dropmenu.js)*/
+.dropdown-item .subitem.show-dropdown {
+    max-height: 600px;
+} 
+
+/* change cheveron to up when checkbox is checked(DropMenu.js) */
+.cheveron.show-dropdown {
+    transform: rotate(-45deg);
+    bottom: -5px;
+}
+
+/* on effect */
+
+#menu a.on{
+    color: #b2bec3;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+/* style search-box */
+#search-box {
+    box-sizing: border-box;
+    height: 40px;
+    float: right;
+    margin-right: 30px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 11;
+    background-color: none;
+    border-radius: 40px;
+    transform: translateY(-50%);
+    border: none;
+}
+
+input[name="search-text"] {
+    height: 40px;
+    float: left;
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    line-height: 40px;
+    width: 0;
+    transition: .4s;
+    font-size: 1.8vw;
+}
+#search-btn {
+    text-decoration: none;
+    color: black;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 16px;
+    line-height: 40px;
+}
+
+#search-box:hover > input[name="search-text"] {
+    width: 20vw;
+}
+
+
+/* style banner */
+div#banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+}
+#banner img#logo-img{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+}
+.welcome {
+    /* font-family: 'Tangerine', sans-serif; */
+    /*font-family: 'Brush Script MT';*/
+    color: #0d95e4;
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+.introduction {
+    color: #bce04c;
+    /*font-size: 2em;*/
+    margin-bottom: 10px;
+    /*font-family: Georgia, 'Times New Roman', Times, serif;*/
+    /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
+    transition: 2s;
+    font-weight: bold;
+}
+
+.slogan {
+    color:#2f3542;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+/* style logo */
+#logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+
+    /* center horizontally */
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+img[alt = "logo"] {
+    display: block;
+    width: 80px;
+    height: 80px;
+    transition: .5s;
+}
+/* style footer */
+div#foot {
+    margin:0;
+    height: 120px;
+    width: 100%;
+    background-color: grey;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+}
+#copyrights {
+    height: 20px;
+    color: #fff;
+    font-size: 0.8em;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+}
+#social-media {
+    width: 100%;
+    position: absolute;
+    top: 60px;
+}
+#social-media a {
+    display: inline-flex; /* a tag dispaly as flex container */
+    text-decoration: none; 
+    font-size: 3vw;
+    width: 5vw;
+    height: 5vw;
+    background: none; /* để background a ko đề lên before */
+    color: #fff;
+    /* center vertically and horizontally */
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    position: relative;
+}
+
+/******************************************************  desktop breaking point ******************************************/
+@media only screen and (min-width: 992px) {
+    /* hide #nav when scroll down (showMenuOnScroll.js) */
+    #nav.hiden {
+        transform: translateY(-150%);
+    }
+    #nav {
+        width: 100vw;
+    }
+    /* hide hamburger button */
+    button.hamburger {
+        display: none;
+    }
+    /* change menu to one line display */
+    #menu {
+        display: flex;
+        justify-content: space-around;
+        height: 80px;
+        background: none;
+        padding: 0;
+        top: 0;
+        width: 80vw;
+        /* disable transform */
+        transform: none;
+        /* center horizontally */
+        position: static;
+        margin: 0 auto;
+    }
+    /* disable transform effect to show menu on mobile (line 119 ) */
+    #menu.active {
+        transform: none;
+    }
+    
+    #menu a {
+        color: white;
+        /* center horizontally and vertically */
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        height: 80px;
+        /* responsive font size */
+        letter-spacing: 0.1em;
+        font-size: 1vw;
+        /* center vertically */
+        transition: .5s;
+    }
+    /* style drop down menu */
+    /* disable show-dropdown class */
+    .cheveron.show-dropdown {
+        transform: rotate(135deg);
+        bottom: 0px;
+    }
+    .dropdown-item .subitem.show-dropdown {
+        max-height: 0px;
+    } 
+
+    #menu .dropdown-item {
+        display: inline-block;
+        width: 12vw;
+        height: 80px;
+    }
+    .dropdown-item a#drop {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+    }
+    span.cheveron {
+        display: inline-block;
+        width: 1vw;
+        height: 1vw;
+        bottom: 5px;
+    }
+
+    /* style subitem menu */
+    .dropdown-item .subitem {
+        /* hide subitem */
+        max-height: 0px;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(47, 135, 173, .7);
+        position: absolute;
+        top: 80px;
+        text-align: center;
+        width: 16vw;
+    
+    }
+
+    #menu .dropdown-item .subitem>a {
+        width: 100%;
+        margin: 0;
+        height: 60px;
+    }
+    /* show subitem on hover */
+    .dropdown-item:hover .subitem {
+        max-height: 400px;
+    }
+    /* on and hover efect */
+    #menu a.on {
+        color: yellow;
+        background: none;
+    }
+    #menu a:hover {
+        color: rgb(43, 255, 0);
+        transform: scale(1.2);
+    }
+
+    /* style search box */
+    input[name="search-text"] {
+        width: 0;
+        padding-left: 15px;
+        font-size: 1vw;
+    }
+    /* disable hover effect */
+    #search-box:hover > input[name="search-text"] {
+        width: 10vw;
+    }
+    /* style the logo */
+    img[alt = "logo"]:hover {
+        transform: scale(1.5);
+    }
+    /* style foot section */
+    div#foot {
+        height: 70px;
+        text-align: left;
+        position: relative;
+    }
+    #copyrights {
+        margin-top: 0;
+        position: absolute;
+        width: auto;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 20px;
+        font-size: 1em;
+    }
+    #social-media {
+        width: auto;
+        margin-top: 0;
+        position: absolute;
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* add hover effect for social-media button */
+    /* create a circle button */
+    #social-media a::before {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background-image: linear-gradient(to right top, #36d5f1, #3ac2da, #3cabc4, #3daea3, #3d9399);
+        border-radius: 50%;
+        z-index: -1;
+        transition: .3s ease-in;
+    }
+    
+    #social-media a i {
+        transition: .3s ease-in;
+    }
+    
+    #social-media a {
+        width: 40pxx;
+        height: 40px;
+        font-size: 16px;
+    }
+    #social-media a::before {
+        width: 40px;
+        height: 40px;
+    }
+    #social-media a:hover::before {
+        transform: scale(0);
+    }
+    #social-media a:hover i {
+        color:  #fff;  
+        transform: scale(2.2);    
+    }
+    /* style banner text */
+    .welcome {
+        font-size: 5em;
+        margin-bottom: 10px;
+    }
+    /* style logo image in banner */
+    #banner img#logo-img{
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+    }
+} 
+
+/* define heading separators  */
+.separator {
+    width: 300px;
+    height: 1px;
+    display: block;
+    position: relative;
+    margin: 40px auto 30px auto;
+    background-color: #1255e6;
+}
+
+.separator::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    left: 150px;
+    background-color: #e80e0e;
+}
+
+/* style the up to top button */
+.UpToTop {
+    position: fixed;
+    z-index: 20;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #77B81E;
+    /* hide uptotop button */
+    display: none;
+
+}
+.UpToTop i {
+    display: inline-block;
+    /* center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px -25px;
+    z-index: -1;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.5em;
+    color: #111;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .7s;
+}
+
+a.UpToTop::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-image: url(../imgs/tree-btn.png);
+    background-size: cover;
+    transition: .7s;
+}
+.UpToTop:hover::before {
+    transform: scale(0);
+}
+
+.UpToTop:hover i {
+    transform: scale(1);
+}
+
+
+
+
+

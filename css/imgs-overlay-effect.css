@@ -1,0 +1,174 @@
+/********* overlay effect for gallery imgage on desktop version **********/
+
+@media only screen and (min-width: 992px) {
+    div.gallery-desktop {
+        display: block;
+    }
+    div.box {
+        position: relative;
+        width: 70vw;
+        height: 65vw;
+        margin: 18px;
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .8);
+        background-color: orangered;
+        padding: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    
+    .box::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-top: 1px solid #00FFFF;
+        border-bottom: 1px solid #00FFFF;
+        transition: .5s;
+        transform: scaleX(0);
+        opacity: 0;
+        /* z-index: 1; */
+    }
+    
+    .box:hover::before {
+        transform: scaleX(1);
+        opacity: 1;
+    } 
+    
+    .box::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border-left: 1px solid 	#00FFFF;
+        border-right: 1px solid #00FFFF;
+        transition: .5s;
+        transform: scaleY(0);
+        opacity: 0;
+        z-index: 1;
+    }
+    
+    .box:hover::after {
+        transform: scaleY(1);
+        opacity: 1;
+    } 
+    
+    .box .imgBox {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .box .imgBox img {
+        width: 100%;
+        height: 100%;
+        transition: .5s;
+    }
+    
+    .box:hover .imgBox img {
+        opacity: .4; 
+        /* opacity sets the opacity level for an element  */
+        transform: scale(1.2);
+    }
+    
+    .box .content {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        padding: 20px;
+        box-sizing: border-box;
+    
+    }
+    .box .content a.gallery-btn {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+        padding: 10px 30px;
+        box-shadow:  0 5px 10px rgba(0, 0, 0, .8);
+        top: 70px;
+        background-color: blueviolet;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        transition: .3s;
+    }
+    .box .content a.gallery-btn:hover {
+        background-color: orangered;
+        color: black;
+    }
+    .content h2 {
+        margin: 0 0 0 10px;
+        margin-bottom: 20px;
+        padding: 0;
+        color: #fff;
+        transform: translateY(-50px);
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .box .content>p {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        transition: .5s;
+        transform: translateY(50px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .box .content>a {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        transition: .5s;
+        transform: translateY(50px);
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .box:hover .content>h2 {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+    }
+    
+    .box:hover .content>p {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    
+    .box:hover .content>a.gallery-btn {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        text-decoration: none;
+    }
+    .box .content {
+        font-size: 1.2vw;
+    }
+    .box .content a.gallery-btn {
+        top: 0.8vw;
+        font-size: 0.9vw;
+    }
+    .box .content h2 {
+        font-size: 2vw;
+    }
+    div.box {
+        position: relative;
+        width: 21vw;
+        height: 17vw;
+        margin: 1.7vw;
+        left: 0;
+        transform: translateX(0);
+        
+    } 
+}

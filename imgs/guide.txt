@@ -1,0 +1,1 @@
+This folder contains image uploaded by user and will be recorded into the database.
